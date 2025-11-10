@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing projects, skills, and experience in AI, ML, and systems engineering.
 
-**Live:** [your-domain-or-github-pages-url](https://your-domain-or-github-pages-url)
+**Live:** [Portfolio]((https://sayefalikhan03.github.io/portfolio/)
 
 ## Overview
 

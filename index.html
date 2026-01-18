@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Sayef Ali Khan | AI & Systems Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI & Systems Engineer. Self-taught AI, embedded/Linux/networking background. Building intelligent and reliable systems." />
+  <meta name="description"
+    content="AI & Systems Engineer. Self-taught AI, embedded/Linux/networking background. Building intelligent and reliable systems." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sayef Ali Khan | AI & Systems Engineer" />
-  <meta property="og:description" content="Self-taught AI with systems grounding. Projects in T2I deployment, DAAM validation, cloud NAS, and APIs." />
+  <meta property="og:description"
+    content="Self-taught AI with systems grounding. Projects in T2I deployment, DAAM validation, cloud NAS, and APIs." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/hero.jpg" />
   <meta property="og:url" content="https://your-domain-or-github-pages-url" />
 
   <link rel="icon" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@800&family=Fira+Code&display=swap"
+    rel="stylesheet">
   <link rel="preload" as="image" href="images/hero.jpg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -39,7 +48,9 @@
       <div class="container hero__grid">
         <div class="hero__text">
           <h1>AI & Systems Engineer</h1>
-          <p>I build reliable systems and I’m teaching myself AI. My background spans embedded System, Linux, network Administrator and Project Management. I’m growing into applied ML and edge AI while learning on new challenges.</p>
+          <p>I build reliable systems and I’m teaching myself AI. My background spans embedded System, Linux, network
+            Administrator and Project Management. I’m growing into applied ML and edge AI while learning on new
+            challenges.</p>
           <div class="hero__actions">
             <a href="#projects" class="btn">See projects</a>
           </div>
@@ -65,15 +76,44 @@
 
         <div class="grid cards">
           <!-- Thesis -->
-          <article class="card">
+          <article class="card card--large">
             <figure class="card__media image-frame">
-              <img src="images/thesis.jpg" alt="Architecture diagram concept for text-to-image system" width="1200" height="675" loading="lazy" decoding="async" />
+              <img src="images/thesis.jpg" alt="Architecture diagram concept for text-to-image system" width="1200"
+                height="675" loading="lazy" decoding="async" />
             </figure>
             <div class="card__body">
               <h3>Thesis: Deployable Text-to-Image Architecture with MWEs & Supersenses</h3>
-              <p>Designing a deployable T2I stack that integrates Multiword Expressions (MWEs) and supersenses for richer prompts. Focus on data flow, components, and inference performance. Case study and repo summary coming soon.</p>
+              <p>Designing a deployable T2I stack that integrates Multiword Expressions (MWEs) and supersenses for
+                richer prompts. Focus on data flow, components, and inference performance. Case study and repo summary
+                coming soon.</p>
               <ul class="tags">
-                <li>Python</li><li>PyTorch</li><li>T2I</li><li>MWEs</li><li>Supersenses</li><li>Deployment</li>
+                <li>Python</li>
+                <li>PyTorch</li>
+                <li>T2I</li>
+                <li>MWEs</li>
+                <li>Supersenses</li>
+                <li>Deployment</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- AI News Automation -->
+          <article class="card">
+            <figure class="card__media image-frame">
+              <img src="images/ai-news-automation.png" alt="AI News & Learning Automation Pipeline" width="1200"
+                height="675" loading="lazy" decoding="async" />
+            </figure>
+            <div class="card__body">
+              <h3>Automated AI News & Learning Pipeline</h3>
+              <p>Gemini-powered automation that aggregates daily tech news summaries and weekly YouTube learning
+                resources. Built to filter high-signal AI developments while streamlining my continuous learning loop.
+              </p>
+              <ul class="tags">
+                <li>Gemini API</li>
+                <li>LLMs</li>
+                <li>RSS</li>
+                <li>Automation</li>
+                <li>Discord/Webhook</li>
               </ul>
             </div>
           </article>
@@ -81,13 +121,18 @@
           <!-- DAAM validation -->
           <article class="card">
             <figure class="card__media image-frame">
-              <img src="images/daam.jpg" alt="DAAM validation experiment" width="1200" height="675" loading="lazy" decoding="async" />
+              <img src="images/daam.jpg" alt="DAAM validation experiment" width="1200" height="675" loading="lazy"
+                decoding="async" />
             </figure>
             <div class="card__body">
               <h3>DAAM Validation on a 7B LLM</h3>
-              <p>Validated DAAM on a 7B model to inspect attention alignment during generation. Notes and plots in progress; will publish a short report with examples.</p>
+              <p>Validated DAAM on a 7B model to inspect attention alignment during generation. Notes and plots in
+                progress; will publish a short report with examples.</p>
               <ul class="tags">
-                <li>LLMs</li><li>DAAM</li><li>Attention</li><li>Visualization</li>
+                <li>LLMs</li>
+                <li>DAAM</li>
+                <li>Attention</li>
+                <li>Visualization</li>
               </ul>
             </div>
           </article>
@@ -95,13 +140,19 @@
           <!-- Cloud NAS -->
           <article class="card">
             <figure class="card__media image-frame">
-              <img src="images/cloud-nas.jpg" alt="Self-hosted cloud NAS" width="1200" height="675" loading="lazy" decoding="async" />
+              <img src="images/cloud-nas.jpg" alt="Self-hosted cloud NAS" width="1200" height="675" loading="lazy"
+                decoding="async" />
             </figure>
             <div class="card__body">
               <h3>Self-Hosted Cloud NAS</h3>
-              <p>Built a personal NAS to cut cloud storage costs. Features user auth, backups, and remote access. Documenting network layout, security, and uptime metrics.</p>
+              <p>Built a personal NAS to cut cloud storage costs. Features user auth, backups, and remote access.
+                Documenting network layout, security, and uptime metrics.</p>
               <ul class="tags">
-                <li>Linux</li><li>Networking</li><li>Docker</li><li>Backup</li><li>Security</li>
+                <li>Linux</li>
+                <li>Networking</li>
+                <li>Docker</li>
+                <li>Backup</li>
+                <li>Security</li>
               </ul>
             </div>
           </article>
@@ -109,13 +160,18 @@
           <!-- REST API -->
           <article class="card">
             <figure class="card__media image-frame">
-              <img src="images/rest-api.jpg" alt="REST API toy project" width="1200" height="675" loading="lazy" decoding="async" />
+              <img src="images/rest-api.jpg" alt="REST API toy project" width="1200" height="675" loading="lazy"
+                decoding="async" />
             </figure>
             <div class="card__body">
               <h3>Task Creator REST API (Fun Project)</h3>
-              <p>Small service to create and list tasks. Built to practice API design, validation, and deployment. Will add tests, auth, and a minimal UI.</p>
+              <p>Small service to create and list tasks. Built to practice API design, validation, and deployment. Will
+                add tests, auth, and a minimal UI.</p>
               <ul class="tags">
-                <li>Python</li><li>FastAPI/Flask</li><li>JSON</li><li>CI/CD</li>
+                <li>Python</li>
+                <li>FastAPI/Flask</li>
+                <li>JSON</li>
+                <li>CI/CD</li>
               </ul>
             </div>
           </article>
@@ -300,7 +356,8 @@
           </label>
           <button type="submit" class="btn">Send message</button>
         </form>
-        <p class="muted small">Also: <a href="mailto:khan.sayef03@gmail.com">khan.sayef03@gmail.com</a> · <a href="tel:+4917636190070">(+49) 176 3619 0070</a></p>
+        <p class="muted small">Also: <a href="mailto:khan.sayef03@gmail.com">khan.sayef03@gmail.com</a> · <a
+            href="tel:+4917636190070">(+49) 176 3619 0070</a></p>
       </div>
     </section>
   </main>
@@ -312,4 +369,5 @@
     </div>
   </footer>
 </body>
+
 </html>

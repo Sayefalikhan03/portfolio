@@ -13,24 +13,38 @@
   <meta property="og:description"
     content="Self-taught AI with systems grounding. Projects in T2I deployment, DAAM validation, cloud NAS, and APIs." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/hero.jpeg" />
-  <meta property="og:url" content="https://your-domain-or-github-pages-url" />
+  <meta property="og:url" content="https://sayefalikhan03.github.io/portfolio/" />
+  <meta property="og:image" content="https://sayefalikhan03.github.io/portfolio/images/hero.jpeg" />
 
-  <link rel="icon" href="images/favicon.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sayef Ali Khan | AI & Systems Engineer" />
+  <meta name="twitter:description"
+    content="Self-taught AI with systems grounding. Projects in T2I deployment, DAAM validation, cloud NAS, and APIs." />
+  <meta name="twitter:image" content="https://sayefalikhan03.github.io/portfolio/images/hero.jpeg" />
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%238b5cf6'/><text x='16' y='23' font-size='20' font-weight='bold' font-family='system-ui,sans-serif' fill='white' text-anchor='middle'>S</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@800&family=Fira+Code&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@800&family=Fira+Code&display=swap"
     rel="stylesheet">
   <link rel="preload" as="image" href="images/hero.jpeg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="container nav">
+    <div class="container nav-bar">
       <a class="brand" href="#top">Sayef Ali Khan</a>
-      <nav>
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#languages">Languages</a>
@@ -39,27 +53,56 @@
         <a href="#certs">Certifications</a>
         <a href="#contact" class="btn btn--sm">Contact</a>
       </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <main id="top">
+  <!-- Mobile nav overlay -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="main">
     <!-- Hero -->
-    <section class="hero">
+    <section id="top" class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
-          <h1>I'm Sayef, and I build <br />systems that work.</h1>
-          <p>I’m a systems engineer with a deep interest in AI. I enjoy bridging the gap between stable infrastructure
-            and intelligent systems—solving technical puzzles while keeping things simple and reliable.</p>
+          <span class="role-badge">AI & Systems Engineer</span>
+          <h1>I'm Sayef, and I build<br><span class="gradient-text">systems that work.</span></h1>
+          <p>Systems engineer turned AI explorer. I come from a Linux, networking, and embedded background and now
+            work at the intersection of customer-facing tech and development support. Outside of work, I spend my
+            time building AI side projects and learning how intelligent systems actually ship. I like making things
+            that are simple, reliable, and useful.</p>
           <div class="hero__actions">
             <a href="#projects" class="btn">See projects</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
           </div>
-          <ul class="social">
-            <li><a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://github.com/Sayefalikhan03" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="mailto:khan.sayef03@gmail.com">Email</a></li>
-          </ul>
+          <div class="hero__social">
+            <a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Sayefalikhan03" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="mailto:khan.sayef03@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </a>
+          </div>
         </div>
-        <figure class="hero__image image-frame">
+        <figure class="hero__image">
           <img src="images/hero.jpeg" alt="Sayef Ali Khan — AI & Systems Engineer" width="1600" height="900" />
         </figure>
       </div>
@@ -68,15 +111,15 @@
     <!-- Projects -->
     <section id="projects" class="section">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Projects & Work in Progress</h2>
           <p>Real systems, practical learning. Case studies will be added as they mature.</p>
         </header>
 
         <div class="grid cards">
-          <!-- Thesis -->
-          <article class="card card--large">
-            <figure class="card__media image-frame">
+          <!-- Thesis (featured) -->
+          <article class="card card--featured reveal">
+            <figure class="card__media">
               <img src="images/thesis.jpg" alt="Architecture diagram concept for text-to-image system" width="1200"
                 height="675" loading="lazy" decoding="async" />
             </figure>
@@ -97,8 +140,8 @@
           </article>
 
           <!-- AI News Automation -->
-          <article class="card">
-            <figure class="card__media image-frame">
+          <article class="card reveal">
+            <figure class="card__media">
               <img src="images/ai-news-automation.png" alt="AI News & Learning Automation Pipeline" width="1200"
                 height="675" loading="lazy" decoding="async" />
             </figure>
@@ -118,8 +161,8 @@
           </article>
 
           <!-- DAAM validation -->
-          <article class="card">
-            <figure class="card__media image-frame">
+          <article class="card reveal">
+            <figure class="card__media">
               <img src="images/daam.jpg" alt="DAAM validation experiment" width="1200" height="675" loading="lazy"
                 decoding="async" />
             </figure>
@@ -137,8 +180,8 @@
           </article>
 
           <!-- Cloud NAS -->
-          <article class="card">
-            <figure class="card__media image-frame">
+          <article class="card reveal">
+            <figure class="card__media">
               <img src="images/cloud-nas.jpg" alt="Self-hosted cloud NAS" width="1200" height="675" loading="lazy"
                 decoding="async" />
             </figure>
@@ -156,9 +199,9 @@
             </div>
           </article>
 
-          <!-- Sovereign Gateway -->
-          <article class="card card--large">
-            <figure class="card__media image-frame">
+          <!-- Sovereign Gateway (featured) -->
+          <article class="card card--featured reveal">
+            <figure class="card__media">
               <img src="images/sovereign-gateway.png" alt="Sovereign Gateway - Secure MCP Server" width="1200"
                 height="675" loading="lazy" decoding="async" />
             </figure>
@@ -178,10 +221,10 @@
           </article>
 
           <!-- Flex-Desk Manager -->
-          <article class="card">
-            <figure class="card__media image-frame">
-              <img src="images/flex-desk.png" alt="Flex-Desk Manager Dashboard" width="1200" height="675" loading="lazy"
-                decoding="async" />
+          <article class="card reveal">
+            <figure class="card__media">
+              <img src="images/flex-desk.png" alt="Flex-Desk Manager Dashboard" width="1200" height="675"
+                loading="lazy" decoding="async" />
             </figure>
             <div class="card__body">
               <h3>Flex-Desk: Full-Stack Resource Manager</h3>
@@ -198,8 +241,8 @@
           </article>
 
           <!-- Watchtower -->
-          <article class="card">
-            <figure class="card__media image-frame">
+          <article class="card reveal">
+            <figure class="card__media">
               <img src="images/watchtower.png" alt="Watchtower Monitoring Dashboard" width="1200" height="675"
                 loading="lazy" decoding="async" />
             </figure>
@@ -216,22 +259,59 @@
               </ul>
             </div>
           </article>
+
+          <!-- Skill Yourself -->
+          <article class="card card--featured card--no-image reveal">
+            <div class="card__body">
+              <h3>Skill Yourself: Weekend Learning Tracker</h3>
+              <p>A structured 16-weekend roadmap to go from systems engineer to AI/ML engineer with production
+                LLM + RAG expertise. Includes a FastAPI backend, Streamlit dashboard, LangChain/LangGraph
+                orchestration, ChromaDB vector store, and Docker deployment. Saturday = Learn, Sunday = Build.</p>
+              <ul class="tags">
+                <li>LLMs</li>
+                <li>RAG</li>
+                <li>LangChain</li>
+                <li>FastAPI</li>
+                <li>Streamlit</li>
+                <li>ChromaDB</li>
+                <li>Docker</li>
+                <li>Fine-Tuning</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Portfolio Site -->
+          <article class="card card--no-image reveal">
+            <div class="card__body">
+              <h3>This Portfolio Site</h3>
+              <p>The site you're looking at right now. Hand-coded from scratch with zero dependencies — just
+                semantic HTML, custom CSS with fluid typography and scroll animations, and a 12-line vanilla JS
+                hamburger toggle. Designed for fast loading, accessibility, and free GitHub Pages hosting.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Responsive</li>
+                <li>GitHub Pages</li>
+                <li>Zero Dependencies</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <p class="muted small">More projects will be added here as they’re ready.</p>
+        <p class="muted small" style="margin-top: 1.5rem;">More projects will be added here as they're ready.</p>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="section section--alt">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Skills</h2>
           <p>Growing AI depth on top of systems fundamentals.</p>
         </header>
 
-        <div class="grid two">
-          <div>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
             <h3>AI & ML</h3>
             <ul class="bullets">
               <li>Python, NumPy, Pandas, scikit-learn</li>
@@ -240,7 +320,7 @@
               <li>Experiment tracking, containers, basic MLOps</li>
             </ul>
           </div>
-          <div>
+          <div class="skill-card reveal">
             <h3>Systems & Networking</h3>
             <ul class="bullets">
               <li>Linux (admin), shell, Docker</li>
@@ -249,23 +329,20 @@
               <li>Scripting: Bash, Python</li>
             </ul>
           </div>
-        </div>
-
-        <div class="stack">
-          <h3>Tools</h3>
-          <p>Git, GitHub, Jira, Hubspot, Postman, Bruno, AWS (EC2, S3, IAM), Logstash, Wireshark</p>
-        </div>
-
-        <!-- Hiring-manager friendly signals -->
-        <div class="stack">
-          <h3>What I deliver</h3>
-          <ul class="bullets">
-            <li>Reliable services: containerized deployments with clear SLOs and monitoring.</li>
-            <li>Cost-aware design: lean infrastructure, right-sizing, and simple automation.</li>
-            <li>Security by default: least-privilege IAM, secrets handling, and network hygiene.</li>
-            <li>Readable code and docs: small modules, tests, and runbooks that others can use.</li>
-            <li>Cross-team execution: take vague requirements, scope them, and ship on time.</li>
-          </ul>
+          <div class="skill-card reveal">
+            <h3>Tools</h3>
+            <p style="color: var(--muted); font-size: .93rem; margin: 0;">Git, GitHub, Jira, Hubspot, Postman, Bruno, AWS (EC2, S3, IAM), Logstash, Wireshark</p>
+          </div>
+          <div class="skill-card skill-card--wide reveal">
+            <h3>What I deliver</h3>
+            <ul class="bullets">
+              <li>Reliable services: containerized deployments with clear SLOs and monitoring.</li>
+              <li>Cost-aware design: lean infrastructure, right-sizing, and simple automation.</li>
+              <li>Security by default: least-privilege IAM, secrets handling, and network hygiene.</li>
+              <li>Readable code and docs: small modules, tests, and runbooks that others can use.</li>
+              <li>Cross-team execution: take vague requirements, scope them, and ship on time.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -273,61 +350,97 @@
     <!-- Languages -->
     <section id="languages" class="section">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Languages</h2>
           <p>Comfortable working in multilingual teams and with international stakeholders.</p>
         </header>
-        <ul class="list">
-          <li>German — B1 (Goethe-Zertifikat)</li>
-          <li>English — Fluent</li>
-          <li>Bangla — Native</li>
-          <li>Hindi — Conversational</li>
-        </ul>
+
+        <div class="lang-grid reveal">
+          <div class="lang-item">
+            <div class="lang-label">
+              <span>German</span>
+              <span>B1 (Goethe-Zertifikat)</span>
+            </div>
+            <div class="lang-bar">
+              <div class="lang-bar__fill" style="--level: 45%"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-label">
+              <span>English</span>
+              <span>Fluent</span>
+            </div>
+            <div class="lang-bar">
+              <div class="lang-bar__fill" style="--level: 92%"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-label">
+              <span>Bangla</span>
+              <span>Native</span>
+            </div>
+            <div class="lang-bar">
+              <div class="lang-bar__fill" style="--level: 100%"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-label">
+              <span>Hindi</span>
+              <span>Conversational</span>
+            </div>
+            <div class="lang-bar">
+              <div class="lang-bar__fill" style="--level: 35%"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="section">
+    <section id="experience" class="section section--alt">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Experience</h2>
           <p>Hands-on roles while self-learning AI.</p>
         </header>
 
         <div class="timeline">
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>Metrilus GmbH — Junior Onboarding Success Manager</h3>
-            <p class="muted">Mar 2025 – Present · Utterndorf/Bavaria, Germany · On-site</p>
-            <p>Customer onboarding for vision systems; coordination across engineering, IT, and ops.</p>
+            <p class="muted small">Mar 2025 – Present · Utterndorf/Bavaria, Germany · On-site</p>
+            <p>Supporting the development team while onboarding international customers to our vision-system products
+              and software. Handling support cases, bridging communication between sales and engineering on technical
+              topics, and managing day-to-day office operations. Acting as the connective layer that keeps cross-team
+              workflows running smoothly.</p>
           </article>
 
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>Metrilus GmbH — Werkstudent</h3>
-            <p class="muted">Mar 2023 – Feb 2025 · Erlangen, Germany</p>
+            <p class="muted small">Mar 2023 – Feb 2025 · Erlangen, Germany</p>
             <p>Part-time student role supporting systems tasks and demos.</p>
           </article>
 
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>Blue Solutions Limited — Assistant Manager</h3>
-            <p class="muted">Nov 2021 – Apr 2022 · Dhaka, Bangladesh</p>
+            <p class="muted small">Nov 2021 – Apr 2022 · Dhaka, Bangladesh</p>
             <p>Linux system administration and IT project coordination.</p>
           </article>
 
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>TVSL — Executive, Sales & Support</h3>
-            <p class="muted">Feb 2020 – Dec 2021 · Dhaka, Bangladesh</p>
+            <p class="muted small">Feb 2020 – Dec 2021 · Dhaka, Bangladesh</p>
             <p>Network engineering support and system administration for customers.</p>
           </article>
 
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>TVSL — Network Executive</h3>
-            <p class="muted">Feb 2019 – Feb 2020 · Dhaka, Bangladesh</p>
+            <p class="muted small">Feb 2019 – Feb 2020 · Dhaka, Bangladesh</p>
             <p>Switching, routing, and customer network operations.</p>
           </article>
 
-          <article class="timeline__item">
+          <article class="timeline__item reveal">
             <h3>Dhaka Stock Exchange Ltd — Engineering Internship</h3>
-            <p class="muted">Jun 2018 – Aug 2018 · Dhaka, Bangladesh</p>
+            <p class="muted small">Jun 2018 – Aug 2018 · Dhaka, Bangladesh</p>
             <p>Short internship focusing on infrastructure exposure.</p>
           </article>
         </div>
@@ -335,17 +448,17 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="section section--alt">
+    <section id="education" class="section">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Education</h2>
         </header>
-        <div class="grid two">
-          <div>
+        <div class="edu-grid">
+          <div class="edu-card reveal">
             <h3>FAU Erlangen-Nürnberg</h3>
             <p class="muted">M.Sc., Information and Communications Technology · Oct 2021 – Dec 2024</p>
           </div>
-          <div>
+          <div class="edu-card reveal">
             <h3>Khulna University</h3>
             <p class="muted">B.Sc., Electrical, Electronics and Communications Engineering · 2014 – 2018</p>
           </div>
@@ -354,61 +467,170 @@
     </section>
 
     <!-- Certifications -->
-    <section id="certs" class="section">
+    <section id="certs" class="section section--alt">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Certifications (selected)</h2>
         </header>
-        <ul class="list">
-          <li>Hugging Face — AI Agents Fundamentals (2025)</li>
-          <li>SAP — Generative AI at SAP (2024)</li>
-          <li>Goethe-Institut — Goethe-Zertifikat B1 (2024)</li>
-          <li>Codecademy — Learn Bash; Learn Git & GitHub (2023)</li>
-          <li>Microsoft — AZ-900 Azure Fundamentals (2021)</li>
-          <li>Allot — Certified DDoS Secure Administrator; Allot Certified Technical Engineer</li>
-          <li>Cisco Networking Academy — NDG Linux Unhatched</li>
-          <li>Udemy — CCNA MPLS Core Technologies</li>
-        </ul>
-        <p class="muted small">Full list available on request.</p>
+
+        <div class="cert-grid">
+          <div class="cert-item reveal">
+            <span class="cert-year">2025</span>
+            <div class="cert-info">
+              AI Agents Fundamentals
+              <span class="cert-issuer">Hugging Face</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">2024</span>
+            <div class="cert-info">
+              Generative AI at SAP
+              <span class="cert-issuer">SAP</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">2024</span>
+            <div class="cert-info">
+              Goethe-Zertifikat B1
+              <span class="cert-issuer">Goethe-Institut</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">2023</span>
+            <div class="cert-info">
+              Learn Bash; Learn Git & GitHub
+              <span class="cert-issuer">Codecademy</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">2021</span>
+            <div class="cert-info">
+              AZ-900 Azure Fundamentals
+              <span class="cert-issuer">Microsoft</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">&mdash;</span>
+            <div class="cert-info">
+              Certified DDoS Secure Administrator; Certified Technical Engineer
+              <span class="cert-issuer">Allot</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">&mdash;</span>
+            <div class="cert-info">
+              NDG Linux Unhatched
+              <span class="cert-issuer">Cisco Networking Academy</span>
+            </div>
+          </div>
+          <div class="cert-item reveal">
+            <span class="cert-year">&mdash;</span>
+            <div class="cert-info">
+              CCNA MPLS Core Technologies
+              <span class="cert-issuer">Udemy</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top: 1.25rem;">Full list available on request.</p>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section section--alt">
+    <section id="contact" class="section">
       <div class="container">
-        <header class="section__header">
+        <header class="section__header reveal">
           <h2>Contact</h2>
           <p>Based in Erlangen, Germany.</p>
         </header>
-        <form class="contact" method="post" action="https://formspree.io/f/mqkvgjvw">
-          <div class="grid two">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" required />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" required />
-            </label>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p>Have a question or want to work together? Drop me a message through the form or reach out directly.</p>
+            <div class="contact-links">
+              <a href="mailto:khan.sayef03@gmail.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                khan.sayef03@gmail.com
+              </a>
+              <a href="tel:+4917636190070">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                (+49) 176 3619 0070
+              </a>
+            </div>
+            <div class="contact-social">
+              <a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://github.com/Sayefalikhan03" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
           </div>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button type="submit" class="btn">Send message</button>
-        </form>
-        <p class="muted small">Also: <a href="mailto:khan.sayef03@gmail.com">khan.sayef03@gmail.com</a> · <a
-            href="tel:+4917636190070">(+49) 176 3619 0070</a></p>
+
+          <form class="contact-form reveal" method="post" action="https://formspree.io/f/mqkvgjvw">
+            <div class="form-row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" required autocomplete="name" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required autocomplete="email" />
+              </label>
+            </div>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn">Send message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer__grid">
-      <p>&copy; 2019–2025 Sayef Ali Khan</p>
-      <p>Built with clean HTML & CSS.</p>
+    <div class="container footer__inner">
+      <p>&copy; 2019–2026 Sayef Ali Khan</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/Sayefalikhan03" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
     </div>
   </footer>
+
+  <!-- Inline script: hamburger toggle + scroll-triggered reveals fallback -->
+  <script>
+    (function () {
+      const btn = document.querySelector('.hamburger');
+      const nav = document.querySelector('.mobile-nav');
+      const links = nav.querySelectorAll('a');
+
+      function toggle() {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !open);
+        nav.classList.toggle('open');
+        document.body.classList.toggle('nav-open');
+      }
+
+      btn.addEventListener('click', toggle);
+      links.forEach(function (a) { a.addEventListener('click', function () { if (nav.classList.contains('open')) toggle(); }); });
+
+      /* Reveal fallback for browsers without animation-timeline */
+      if (!CSS.supports('animation-timeline', 'view()')) {
+        var els = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { io.observe(el); });
+      }
+    })();
+  </script>
 </body>
 
 </html>

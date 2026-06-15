@@ -2,9 +2,8 @@
 
 > Engineer and communicator who turns vague requirements into reliable systems — and directs AI to ship them.
 
-A fast, component-driven personal site built with Astro and deployed to GitHub Pages. The centerpiece
-is an embedded "Ask my AI" assistant (Claude behind a Cloudflare Worker) that lets anyone interrogate
-my real experience directly.
+A fast, component-driven personal site built with Astro and deployed to GitHub Pages. It showcases
+my projects, experience, and skills, with a downloadable résumé.
 
 ## Tech stack
 
@@ -13,7 +12,6 @@ my real experience directly.
 - **Content**: Projects authored as Markdown in a content collection.
 - **Hosting / CI**: GitHub Pages, auto-deployed via GitHub Actions on every push to `main`.
 - **Analytics**: Cloudflare Web Analytics (cookie-less, no PII) — optional, token-gated.
-- **AI assistant** (Phase 2): Claude (`claude-haiku-4-5`) via a rate-limited Cloudflare Worker.
 
 ## Local development
 
@@ -32,9 +30,8 @@ Optional environment variables (set as GitHub repository **Variables** for CI, o
 | Variable | Purpose |
 | --- | --- |
 | `PUBLIC_CF_BEACON_TOKEN` | Enables Cloudflare Web Analytics. |
-| `PUBLIC_ASKAI_ENDPOINT` | URL of the Cloudflare Worker backing the "Ask my AI" widget. |
 
-If unset, analytics is skipped and the AI widget shows a graceful fallback message.
+If unset, analytics is skipped.
 
 ## Project structure
 
@@ -45,7 +42,7 @@ portfolio/
 │   ├── content.config.ts      # projects collection schema
 │   ├── content/projects/      # one Markdown file per project
 │   ├── layouts/Base.astro     # head, SEO/OG, fonts, analytics
-│   ├── components/            # Hero, AskAI, Projects, Skills, …
+│   ├── components/            # Hero, Projects, Skills, Experience, …
 │   ├── pages/index.astro      # page assembly + client scripts
 │   └── styles/global.css      # design tokens + component styles
 ├── public/images/            # project thumbnails (1200×675, 16:9)

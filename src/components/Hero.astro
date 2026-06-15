@@ -1,5 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
 ---
 
 <section id="top" class="hero">
@@ -15,8 +16,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         genuinely useful.
       </p>
       <div class="hero__actions">
-        <a href="#ask-ai" class="btn">Ask my AI about me</a>
-        <a href="#projects" class="btn btn--ghost">See projects</a>
+        <a href="#projects" class="btn">See my projects</a>
+        <a href={resumeHref} class="btn btn--ghost" download>Download résumé</a>
       </div>
       <div class="hero__social">
         <a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener">
@@ -44,7 +45,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </figure>
   </div>
 
-  <a href="#ask-ai" class="scroll-cue" aria-label="Scroll to next section">
+  <a href="#projects" class="scroll-cue" aria-label="Scroll to next section">
     <span>Scroll</span>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16.5l-6-6 1.41-1.41L12 13.67l4.59-4.58L18 10.5z"/></svg>
   </a>

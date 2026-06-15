@@ -1,6 +1,7 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
 const links = [
-  { href: '#ask-ai', label: 'Ask my AI' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
@@ -14,6 +15,7 @@ const links = [
     <a class="brand" href="#top">Sayef Ali Khan</a>
     <nav class="nav-links" aria-label="Main navigation">
       {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a href={resumeHref} download>Résumé</a>
       <a href="#contact" class="btn btn--sm">Contact</a>
     </nav>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -24,5 +26,6 @@ const links = [
 
 <nav class="mobile-nav" aria-label="Mobile navigation">
   {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  <a href={resumeHref} download>Résumé</a>
   <a href="#contact">Contact</a>
 </nav>

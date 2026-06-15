@@ -259,48 +259,6 @@ a:hover { opacity: .6; }
 }
 .section__header p { color: var(--muted); font-size: 1.05rem; margin: 0; max-width: 560px; }
 
-/* ================================================ ASK MY AI ================================================ */
-.askai { position: relative; padding: 64px 0; }
-.askai > .container { position: relative; z-index: 1; }
-.askai__panel {
-  max-width: 760px; margin-inline: auto;
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 32px; box-shadow: var(--shadow);
-}
-.askai__head { display: flex; align-items: center; gap: 12px; margin-bottom: .5rem; }
-.askai__dot {
-  width: 9px; height: 9px; border-radius: 50%; background: var(--ink);
-  animation: pulse 2s ease-in-out infinite; flex-shrink: 0;
-}
-.askai__head h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; }
-.askai__sub { color: var(--muted); font-size: .98rem; margin-bottom: 1.5rem; }
-.askai__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.25rem; }
-.askai__chip {
-  font-size: .82rem; font-weight: 500; color: var(--text-secondary);
-  background: var(--soft); border: 1px solid var(--border);
-  padding: .45rem .9rem; border-radius: 999px; cursor: pointer;
-  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
-}
-.askai__chip:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
-.askai__inputrow { display: flex; gap: 10px; }
-.askai__input {
-  flex: 1; padding: .85rem 1rem; border-radius: var(--radius-sm);
-  border: 1px solid var(--border); background: #fff;
-  color: var(--text); font-family: inherit; font-size: .95rem;
-  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
-}
-.askai__input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(0,0,0,.08); }
-.askai__log {
-  margin-top: 1.25rem; display: none; flex-direction: column; gap: 12px;
-  max-height: 320px; overflow-y: auto;
-}
-.askai__log.has-messages { display: flex; }
-.askai__msg { padding: .75rem 1rem; border-radius: var(--radius-sm); font-size: .92rem; line-height: 1.6; }
-.askai__msg--user { background: var(--ink); color: #fff; align-self: flex-end; max-width: 85%; }
-.askai__msg--bot { background: var(--soft); border: 1px solid var(--border); align-self: flex-start; max-width: 95%; }
-.askai__note { margin-top: 1rem; font-size: .78rem; color: var(--muted); }
-.askai__note code { font-family: 'Fira Code', monospace; font-size: .76rem; color: var(--ink); }
-
 /* ================================================ PROJECT CARDS ================================================ */
 .grid { display: grid; gap: 24px; }
 .cards { grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); }
@@ -519,8 +477,6 @@ a:hover { opacity: .6; }
   .timeline__item::before { left: -27px; width: 10px; height: 10px; }
   .timeline__item::after { left: -17px; width: 12px; }
   .contact-form { padding: 22px; }
-  .askai__panel { padding: 22px; }
-  .askai__inputrow { flex-direction: column; }
 }
 @media (max-width: 768px) {
   .hero { padding-top: 44px; }

@@ -1,20 +1,47 @@
 ---
-const edu = [
-  {
-    school: 'FAU Erlangen-Nürnberg',
-    detail: 'M.Sc., Information and Communications Technology · Oct 2021 – Dec 2024',
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
+const content = {
+  en: {
+    heading: 'Education',
+    edu: [
+      {
+        school: 'FAU Erlangen-Nürnberg',
+        detail: 'M.Sc., Information and Communications Technology · Oct 2021 – Dec 2024',
+      },
+      {
+        school: 'Khulna University',
+        detail: 'B.Sc., Electrical, Electronics and Communications Engineering · 2014 – 2018',
+      },
+    ],
   },
-  {
-    school: 'Khulna University',
-    detail: 'B.Sc., Electrical, Electronics and Communications Engineering · 2014 – 2018',
+  de: {
+    heading: 'Ausbildung',
+    edu: [
+      {
+        school: 'FAU Erlangen-Nürnberg',
+        detail: 'M.Sc., Informations- und Kommunikationstechnik · Okt 2021 – Dez 2024',
+      },
+      {
+        school: 'Khulna University',
+        detail: 'B.Sc., Elektrotechnik, Elektronik und Nachrichtentechnik · 2014 – 2018',
+      },
+    ],
   },
-];
+};
+const t = content[lang];
+const edu = t.edu;
 ---
 
 <section id="education" class="section">
   <div class="container">
     <header class="section__header reveal">
-      <h2>Education</h2>
+      <h2>{t.heading}</h2>
     </header>
     <div class="edu-grid">
       {edu.map((e) => (

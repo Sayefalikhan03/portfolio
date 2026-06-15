@@ -1,6 +1,8 @@
 ---
 title: "DAAM Validation on a 7B LLM"
+titleDe: "DAAM-Validierung auf einem 7B-LLM"
 summary: "Validated DAAM on a 7B model to inspect attention alignment during generation. Notes and plots in progress."
+summaryDe: "Validierung von DAAM auf einem 7B-Modell, um die Aufmerksamkeitsausrichtung während der Generierung zu untersuchen. Notizen und Plots in Arbeit."
 tags: ["LLMs", "DAAM", "Attention", "Visualization"]
 image: "daam.jpg"
 imageAlt: "DAAM validation experiment"

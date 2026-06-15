@@ -7,4 +7,10 @@ export default defineConfig({
   site: 'https://sayefalikhan03.github.io',
   base: '/portfolio',
   trailingSlash: 'ignore',
+  // English at /portfolio/, German at /portfolio/de/. Default locale is not prefixed.
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+    routing: { prefixDefaultLocale: false },
+  },
 });

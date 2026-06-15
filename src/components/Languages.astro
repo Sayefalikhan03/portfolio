@@ -1,19 +1,44 @@
 ---
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
 // Levels confirmed with Sayef (Jun 2026). B1 certificate remains in the Certs section;
 // current spoken German is business fluent.
-const langs = [
-  { name: 'English', level: 'Fluent', pct: '92%' },
-  { name: 'German', level: 'Business fluent', pct: '88%' },
-  { name: 'Bangla', level: 'Native', pct: '100%' },
-  { name: 'Hindi', level: 'Native / Bilingual', pct: '100%' },
-];
+const content = {
+  en: {
+    heading: 'Languages',
+    sub: 'Comfortable working in multilingual teams and with international stakeholders.',
+    langs: [
+      { name: 'English', level: 'Fluent', pct: '92%' },
+      { name: 'German', level: 'Business fluent', pct: '88%' },
+      { name: 'Bangla', level: 'Native', pct: '100%' },
+      { name: 'Hindi', level: 'Native / Bilingual', pct: '100%' },
+    ],
+  },
+  de: {
+    heading: 'Sprachen',
+    sub: 'Sicher in multilingualen Teams und im Umgang mit internationalen Ansprechpartnern.',
+    langs: [
+      { name: 'Englisch', level: 'Fließend', pct: '92%' },
+      { name: 'Deutsch', level: 'Verhandlungssicher', pct: '88%' },
+      { name: 'Bengalisch', level: 'Muttersprache', pct: '100%' },
+      { name: 'Hindi', level: 'Muttersprachlich / Zweisprachig', pct: '100%' },
+    ],
+  },
+};
+const t = content[lang];
+const langs = t.langs;
 ---
 
 <section id="languages" class="section">
   <div class="container">
     <header class="section__header reveal">
-      <h2>Languages</h2>
-      <p>Comfortable working in multilingual teams and with international stakeholders.</p>
+      <h2>{t.heading}</h2>
+      <p>{t.sub}</p>
     </header>
 
     <div class="lang-grid reveal">

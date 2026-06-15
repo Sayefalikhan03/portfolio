@@ -7,7 +7,10 @@ const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
   schema: z.object({
     title: z.string(),
+    // Optional German overrides; fall back to English when absent.
+    titleDe: z.string().optional(),
     summary: z.string(),
+    summaryDe: z.string().optional(),
     tags: z.array(z.string()),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

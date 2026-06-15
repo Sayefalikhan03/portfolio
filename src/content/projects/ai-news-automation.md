@@ -1,6 +1,8 @@
 ---
 title: "Automated AI News & Learning Pipeline"
+titleDe: "Automatisierte KI-News- & Lern-Pipeline"
 summary: "Gemini-powered automation that aggregates daily tech-news summaries and weekly learning resources, filtering high-signal AI developments."
+summaryDe: "Gemini-gestützte Automatisierung, die täglich Tech-News-Zusammenfassungen und wöchentliche Lernressourcen bündelt und besonders relevante KI-Entwicklungen herausfiltert."
 tags: ["Gemini API", "LLMs", "RSS", "Automation", "Webhook"]
 image: "ai-news-automation.png"
 imageAlt: "AI news and learning automation pipeline"

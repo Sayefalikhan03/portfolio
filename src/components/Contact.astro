@@ -1,18 +1,47 @@
 ---
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
 // Existing Formspree endpoint — works on static hosting.
 const formAction = 'https://formspree.io/f/mqkvgjvw';
+
+const content = {
+  en: {
+    heading: 'Contact',
+    sub: 'Based in the Nuremberg–Erlangen area, Germany. Open to new opportunities.',
+    intro: 'Have a question or want to work together? Send a message through the form or reach out directly.',
+    name: 'Name',
+    email: 'Email',
+    message: 'Message',
+    send: 'Send message',
+  },
+  de: {
+    heading: 'Kontakt',
+    sub: 'Ansässig im Raum Nürnberg–Erlangen, Deutschland. Offen für neue Möglichkeiten.',
+    intro: 'Eine Frage oder Interesse an einer Zusammenarbeit? Schreiben Sie mir über das Formular oder direkt.',
+    name: 'Name',
+    email: 'E-Mail',
+    message: 'Nachricht',
+    send: 'Nachricht senden',
+  },
+};
+const t = content[lang];
 ---
 
 <section id="contact" class="section">
   <div class="container">
     <header class="section__header reveal">
-      <h2>Contact</h2>
-      <p>Based in the Nuremberg–Erlangen area, Germany. Open to new opportunities.</p>
+      <h2>{t.heading}</h2>
+      <p>{t.sub}</p>
     </header>
 
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <p>Have a question or want to work together? Send a message through the form or reach out directly.</p>
+        <p>{t.intro}</p>
         <div class="contact-links">
           <a href="mailto:khan.sayef03@gmail.com">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -36,19 +65,19 @@ const formAction = 'https://formspree.io/f/mqkvgjvw';
       <form class="contact-form reveal" method="post" action={formAction}>
         <div class="form-row">
           <label>
-            <span>Name</span>
+            <span>{t.name}</span>
             <input type="text" name="name" required autocomplete="name" />
           </label>
           <label>
-            <span>Email</span>
+            <span>{t.email}</span>
             <input type="email" name="email" required autocomplete="email" />
           </label>
         </div>
         <label>
-          <span>Message</span>
+          <span>{t.message}</span>
           <textarea name="message" rows="5" required></textarea>
         </label>
-        <button type="submit" class="btn">Send message</button>
+        <button type="submit" class="btn">{t.send}</button>
       </form>
     </div>
   </div>

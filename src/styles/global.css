@@ -116,6 +116,22 @@ a:hover { opacity: .6; }
 }
 .nav-links a:hover { color: var(--ink); background: var(--soft); opacity: 1; }
 
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 2px;
+  margin-left: 6px; padding-left: 10px; border-left: 1px solid var(--border);
+}
+.lang-switch a {
+  padding: .3rem .4rem; border-radius: 6px;
+  font-size: .8rem; font-weight: 600; color: var(--muted);
+}
+.lang-switch a:hover { color: var(--ink); background: var(--soft); }
+.lang-switch a.is-active { color: var(--ink); }
+.lang-switch > span { color: var(--border); font-size: .8rem; }
+.lang-switch--mobile {
+  margin-top: 1.25rem; margin-left: 0; padding-left: 0; border-left: none;
+}
+.lang-switch--mobile a { font-size: 1.1rem; padding: .4rem .7rem; }
+
 .hamburger {
   display: none; background: none; border: 1px solid var(--border); border-radius: 8px;
   cursor: pointer; padding: 8px; width: 42px; height: 42px; position: relative; z-index: 60;

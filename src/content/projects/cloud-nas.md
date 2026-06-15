@@ -1,6 +1,8 @@
 ---
 title: "Self-Hosted Cloud NAS"
+titleDe: "Selbstgehostetes Cloud-NAS"
 summary: "A personal NAS that cuts cloud-storage costs, with user auth, backups, and secure remote access."
+summaryDe: "Ein persönliches NAS, das Cloud-Speicherkosten senkt — mit Benutzer-Authentifizierung, Backups und sicherem Fernzugriff."
 tags: ["Linux", "Networking", "Docker", "Backup", "Security"]
 image: "cloud-nas.jpg"
 imageAlt: "Self-hosted cloud NAS"

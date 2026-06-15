@@ -1,0 +1,71 @@
+---
+import { type Lang, defaultLang } from '../i18n';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Stats from './Stats.astro';
+import Projects from './Projects.astro';
+import Skills from './Skills.astro';
+import Languages from './Languages.astro';
+import Experience from './Experience.astro';
+import Education from './Education.astro';
+import Certs from './Certs.astro';
+import Contact from './Contact.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+---
+
+<Nav lang={lang} />
+<main id="main">
+  <Hero lang={lang} />
+  <Stats lang={lang} />
+  <Projects lang={lang} />
+  <Skills lang={lang} />
+  <Languages lang={lang} />
+  <Experience lang={lang} />
+  <Education lang={lang} />
+  <Certs lang={lang} />
+  <Contact lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.hamburger');
+  const nav = document.querySelector<HTMLElement>('.mobile-nav');
+
+  if (btn && nav) {
+    const links = nav.querySelectorAll('a');
+    const toggle = () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    };
+    btn.addEventListener('click', toggle);
+    links.forEach((a) =>
+      a.addEventListener('click', () => {
+        if (nav.classList.contains('open')) toggle();
+      })
+    );
+  }
+
+  // Reveal fallback for browsers without scroll-driven animation-timeline
+  if (!CSS.supports('animation-timeline', 'view()')) {
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    els.forEach((el) => io.observe(el));
+  }
+</script>

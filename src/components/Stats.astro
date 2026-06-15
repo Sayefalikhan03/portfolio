@@ -1,15 +1,27 @@
 ---
 import { getCollection } from 'astro:content';
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
 
 const projectCount = (await getCollection('projects')).length;
 const yearsInTech = new Date().getFullYear() - 2019;
 
-const stats = [
-  { value: yearsInTech, suffix: '+', label: 'Years in tech' },
-  { value: projectCount, suffix: '', label: 'Projects shipped' },
-  { value: 4, suffix: '', label: 'Languages spoken' },
-  { value: 8, suffix: '+', label: 'Certifications' },
+const labels = {
+  en: ['Years in tech', 'Projects shipped', 'Languages spoken', 'Certifications'],
+  de: ['Jahre in der IT', 'Projekte umgesetzt', 'Sprachen', 'Zertifikate'],
+};
+
+const values = [
+  { value: yearsInTech, suffix: '+' },
+  { value: projectCount, suffix: '' },
+  { value: 4, suffix: '' },
+  { value: 8, suffix: '+' },
 ];
+const stats = values.map((v, i) => ({ ...v, label: labels[lang][i] }));
 ---
 
 <section class="stats" aria-label="At a glance">

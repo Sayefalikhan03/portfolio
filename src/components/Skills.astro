@@ -1,41 +1,68 @@
 ---
-const groups = [
-  {
-    title: 'AI & ML',
-    items: [
-      'Python, NumPy, Pandas, scikit-learn',
-      'PyTorch (training/inference), ONNX Runtime',
-      'Text-to-image architectures, prompt engineering with MWEs/supersenses',
-      'LLM apps: RAG, agents, MCP; experiment tracking and basic MLOps',
-    ],
-  },
-  {
-    title: 'Systems & Networking',
-    items: [
-      'Linux administration, shell, Docker',
-      'Networking: switching, VLANs, routing, firewalling, LTE/5G',
-      'Embedded basics: Yocto, systemd, device trees, MQTT/TLS',
-      'Scripting: Bash, Python',
-    ],
-  },
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
+// Technical bullets are universal terms — shared across locales.
+const groupItems = [
+  [
+    'Python, NumPy, Pandas, scikit-learn',
+    'PyTorch (training/inference), ONNX Runtime',
+    'Text-to-image architectures, prompt engineering with MWEs/supersenses',
+    'LLM apps: RAG, agents, MCP; experiment tracking and basic MLOps',
+  ],
+  [
+    'Linux administration, shell, Docker',
+    'Networking: switching, VLANs, routing, firewalling, LTE/5G',
+    'Embedded basics: Yocto, systemd, device trees, MQTT/TLS',
+    'Scripting: Bash, Python',
+  ],
 ];
 
 const tools = 'Git, GitHub, Jira, HubSpot, Postman, Bruno, AWS (EC2, S3, IAM), Logstash, Wireshark';
 
-const delivers = [
-  'Translate vague requirements into a scoped plan, then ship it on time.',
-  'Bridge sales, customers, and engineering — turning technical detail into plain language.',
-  'Reliable services: containerized deployments with clear monitoring.',
-  'Cost-aware design: lean infrastructure, right-sizing, and simple automation.',
-  'Security by default: least-privilege IAM, secrets handling, network hygiene.',
-];
+const content = {
+  en: {
+    heading: 'Skills',
+    sub: 'Communication and engineering, with growing AI depth on top of systems fundamentals.',
+    groupTitles: ['AI & ML', 'Systems & Networking'],
+    toolsTitle: 'Tools',
+    deliverTitle: 'What I deliver',
+    delivers: [
+      'Translate vague requirements into a scoped plan, then ship it on time.',
+      'Bridge sales, customers, and engineering — turning technical detail into plain language.',
+      'Reliable services: containerized deployments with clear monitoring.',
+      'Cost-aware design: lean infrastructure, right-sizing, and simple automation.',
+      'Security by default: least-privilege IAM, secrets handling, network hygiene.',
+    ],
+  },
+  de: {
+    heading: 'Kenntnisse',
+    sub: 'Kommunikation und Engineering, mit wachsender KI-Tiefe auf einem soliden Systemfundament.',
+    groupTitles: ['AI & ML', 'Systeme & Netzwerke'],
+    toolsTitle: 'Tools',
+    deliverTitle: 'Was ich liefere',
+    delivers: [
+      'Vage Anforderungen in einen klaren Plan überführen und termingerecht umsetzen.',
+      'Vertrieb, Kunden und Technik verbinden — technische Details in verständliche Sprache übersetzen.',
+      'Zuverlässige Dienste: containerisierte Deployments mit klarem Monitoring.',
+      'Kostenbewusstes Design: schlanke Infrastruktur, passende Dimensionierung und einfache Automatisierung.',
+      'Sicherheit als Standard: least-privilege IAM, Umgang mit Secrets, Netzwerk-Hygiene.',
+    ],
+  },
+};
+const t = content[lang];
+const groups = groupItems.map((items, i) => ({ title: t.groupTitles[i], items }));
 ---
 
 <section id="skills" class="section section--alt">
   <div class="container">
     <header class="section__header reveal">
-      <h2>Skills</h2>
-      <p>Communication and engineering, with growing AI depth on top of systems fundamentals.</p>
+      <h2>{t.heading}</h2>
+      <p>{t.sub}</p>
     </header>
 
     <div class="skills-grid">
@@ -48,13 +75,13 @@ const delivers = [
         </div>
       ))}
       <div class="skill-card reveal">
-        <h3>Tools</h3>
+        <h3>{t.toolsTitle}</h3>
         <p class="plain">{tools}</p>
       </div>
       <div class="skill-card skill-card--wide reveal">
-        <h3>What I deliver</h3>
+        <h3>{t.deliverTitle}</h3>
         <ul class="bullets">
-          {delivers.map((i) => <li>{i}</li>)}
+          {t.delivers.map((i) => <li>{i}</li>)}
         </ul>
       </div>
     </div>

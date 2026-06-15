@@ -1,23 +1,48 @@
 ---
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
+
+const content = {
+  en: {
+    badge: 'Engineer · Communicator · AI builder',
+    h1pre: 'I turn vague ideas into',
+    h1accent: 'systems that ship.',
+    body: "I'm Sayef — an engineer who's as comfortable in a stakeholder call as in a terminal. With a background in Linux, networking, and embedded systems, I now work where customer-facing problems meet real engineering. I use modern AI tooling to move faster, not to cut corners: I scope the messy requirement, design the system, and ship something simple, reliable, and genuinely useful.",
+    seeProjects: 'See my projects',
+    downloadResume: 'Download résumé',
+    email: 'Email',
+    scroll: 'Scroll',
+  },
+  de: {
+    badge: 'Ingenieur · Kommunikator · KI-Entwickler',
+    h1pre: 'Ich verwandle vage Ideen in',
+    h1accent: 'Systeme, die liefern.',
+    body: 'Ich bin Sayef — ein Ingenieur, der sich im Kundengespräch ebenso wohlfühlt wie im Terminal. Mit einem Hintergrund in Linux, Netzwerken und Embedded-Systemen arbeite ich heute dort, wo kundennahe Probleme auf echte Technik treffen. Moderne KI-Tools nutze ich, um schneller zu werden, nicht um Abkürzungen zu nehmen: Ich erfasse die unklare Anforderung, entwerfe das System und liefere etwas Einfaches, Zuverlässiges und wirklich Nützliches.',
+    seeProjects: 'Meine Projekte ansehen',
+    downloadResume: 'Lebenslauf herunterladen',
+    email: 'E-Mail',
+    scroll: 'Scrollen',
+  },
+};
+const t = content[lang];
 ---
 
 <section id="top" class="hero">
   <div class="container hero__grid">
     <div class="hero__text">
-      <span class="role-badge">Engineer · Communicator · AI builder</span>
-      <h1>I turn vague ideas into<br /><span class="gradient-text">systems that ship.</span></h1>
-      <p>
-        I'm Sayef — an engineer who's as comfortable in a stakeholder call as in a terminal. With a
-        background in Linux, networking, and embedded systems, I now work where customer-facing
-        problems meet real engineering. I use modern AI tooling to move faster, not to cut corners:
-        I scope the messy requirement, design the system, and ship something simple, reliable, and
-        genuinely useful.
-      </p>
+      <span class="role-badge">{t.badge}</span>
+      <h1>{t.h1pre}<br /><span class="gradient-text">{t.h1accent}</span></h1>
+      <p>{t.body}</p>
       <div class="hero__actions">
-        <a href="#projects" class="btn">See my projects</a>
-        <a href={resumeHref} class="btn btn--ghost" download>Download résumé</a>
+        <a href="#projects" class="btn">{t.seeProjects}</a>
+        <a href={resumeHref} class="btn btn--ghost" download>{t.downloadResume}</a>
       </div>
       <div class="hero__social">
         <a href="https://www.linkedin.com/in/sayef-ali-khan/" target="_blank" rel="noopener">
@@ -30,7 +55,7 @@ const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
         </a>
         <a href="mailto:khan.sayef03@gmail.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          Email
+          {t.email}
         </a>
       </div>
     </div>
@@ -46,7 +71,7 @@ const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
   </div>
 
   <a href="#projects" class="scroll-cue" aria-label="Scroll to next section">
-    <span>Scroll</span>
+    <span>{t.scroll}</span>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16.5l-6-6 1.41-1.41L12 13.67l4.59-4.58L18 10.5z"/></svg>
   </a>
 </section>

@@ -1,37 +1,63 @@
 ---
 import '../styles/global.css';
+import { type Lang, defaultLang } from '../i18n';
 
 interface Props {
+  lang?: Lang;
   title?: string;
   description?: string;
 }
 
-const {
-  title = 'Sayef Ali Khan | Engineer & Communicator',
-  description = 'Engineer and communicator who turns vague requirements into reliable systems — and directs AI to ship them. Background in Linux, networking, and embedded; now building AI-powered tools.',
-} = Astro.props;
+const meta = {
+  en: {
+    title: 'Sayef Ali Khan | Engineer & Communicator',
+    description:
+      'Engineer and communicator who turns vague requirements into reliable systems — and directs AI to ship them. Background in Linux, networking, and embedded; now building AI-powered tools.',
+  },
+  de: {
+    title: 'Sayef Ali Khan | Ingenieur & Kommunikator',
+    description:
+      'Ingenieur und Kommunikator, der vage Anforderungen in zuverlässige Systeme verwandelt — und KI gezielt einsetzt, um sie umzusetzen. Hintergrund in Linux, Netzwerken und Embedded; baut heute KI-gestützte Tools.',
+  },
+};
+
+const { lang = defaultLang } = Astro.props;
+const title = Astro.props.title ?? meta[lang].title;
+const description = Astro.props.description ?? meta[lang].description;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = Astro.site ? new URL(base + '/', Astro.site).href : '';
+const pageUrl = lang === defaultLang ? siteUrl : `${siteUrl}${lang}/`;
+const enUrl = siteUrl;
+const deUrl = `${siteUrl}de/`;
 const ogImage = `${siteUrl}images/sayef.jpg`;
+const ogLocale = lang === 'de' ? 'de_DE' : 'en_US';
+const ogLocaleAlt = lang === 'de' ? 'en_US' : 'de_DE';
 
 // Cloudflare Web Analytics (cookie-less, no PII). Set PUBLIC_CF_BEACON_TOKEN to enable.
 const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
 
+    {siteUrl && <link rel="canonical" href={pageUrl} />}
+    {siteUrl && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {siteUrl && <link rel="alternate" hreflang="de" href={deUrl} />}
+    {siteUrl && <link rel="alternate" hreflang="x-default" href={enUrl} />}
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    {siteUrl && <meta property="og:url" content={siteUrl} />}
+    {siteUrl && <meta property="og:url" content={pageUrl} />}
     <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

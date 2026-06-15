@@ -1,22 +1,53 @@
 ---
+import { type Lang, defaultLang, homePath } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
-const links = [
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#education', label: 'Education' },
-  { href: '#certs', label: 'Certifications' },
-];
+
+const content = {
+  en: {
+    links: [
+      { href: '#projects', label: 'Projects' },
+      { href: '#skills', label: 'Skills' },
+      { href: '#experience', label: 'Experience' },
+      { href: '#education', label: 'Education' },
+      { href: '#certs', label: 'Certifications' },
+    ],
+    resume: 'Résumé',
+    contact: 'Contact',
+  },
+  de: {
+    links: [
+      { href: '#projects', label: 'Projekte' },
+      { href: '#skills', label: 'Kenntnisse' },
+      { href: '#experience', label: 'Erfahrung' },
+      { href: '#education', label: 'Ausbildung' },
+      { href: '#certs', label: 'Zertifikate' },
+    ],
+    resume: 'Lebenslauf',
+    contact: 'Kontakt',
+  },
+};
+const t = content[lang];
 ---
 
 <header class="site-header">
   <div class="container nav-bar">
     <a class="brand" href="#top">Sayef Ali Khan</a>
     <nav class="nav-links" aria-label="Main navigation">
-      {links.map((l) => <a href={l.href}>{l.label}</a>)}
-      <a href={resumeHref} download>Résumé</a>
-      <a href="#contact" class="btn btn--sm">Contact</a>
+      {t.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a href={resumeHref} download>{t.resume}</a>
+      <a href="#contact" class="btn btn--sm">{t.contact}</a>
+      <span class="lang-switch" aria-label="Language">
+        <a href={homePath('en')} class={lang === 'en' ? 'is-active' : ''} hreflang="en">EN</a>
+        <span aria-hidden="true">·</span>
+        <a href={homePath('de')} class={lang === 'de' ? 'is-active' : ''} hreflang="de">DE</a>
+      </span>
     </nav>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -25,7 +56,12 @@ const links = [
 </header>
 
 <nav class="mobile-nav" aria-label="Mobile navigation">
-  {links.map((l) => <a href={l.href}>{l.label}</a>)}
-  <a href={resumeHref} download>Résumé</a>
-  <a href="#contact">Contact</a>
+  {t.links.map((l) => <a href={l.href}>{l.label}</a>)}
+  <a href={resumeHref} download>{t.resume}</a>
+  <a href="#contact">{t.contact}</a>
+  <span class="lang-switch lang-switch--mobile" aria-label="Language">
+    <a href={homePath('en')} class={lang === 'en' ? 'is-active' : ''} hreflang="en">EN</a>
+    <span aria-hidden="true">·</span>
+    <a href={homePath('de')} class={lang === 'de' ? 'is-active' : ''} hreflang="de">DE</a>
+  </span>
 </nav>

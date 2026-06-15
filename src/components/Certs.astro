@@ -1,4 +1,17 @@
 ---
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
+const content = {
+  en: { heading: 'Certifications (selected)', note: 'Full list available on request.' },
+  de: { heading: 'Zertifikate (Auswahl)', note: 'Vollständige Liste auf Anfrage.' },
+};
+const t = content[lang];
+
 const certs = [
   { year: '2025', name: 'AI Agents Fundamentals', issuer: 'Hugging Face' },
   { year: '2024', name: 'Generative AI at SAP', issuer: 'SAP' },
@@ -14,7 +27,7 @@ const certs = [
 <section id="certs" class="section section--alt">
   <div class="container">
     <header class="section__header reveal">
-      <h2>Certifications (selected)</h2>
+      <h2>{t.heading}</h2>
     </header>
 
     <div class="cert-grid">
@@ -29,6 +42,6 @@ const certs = [
       ))}
     </div>
 
-    <p class="muted small" style="margin-top: 1.25rem;">Full list available on request.</p>
+    <p class="muted small" style="margin-top: 1.25rem;">{t.note}</p>
   </div>
 </section>

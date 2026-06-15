@@ -1,0 +1,62 @@
+---
+const groups = [
+  {
+    title: 'AI & ML',
+    items: [
+      'Python, NumPy, Pandas, scikit-learn',
+      'PyTorch (training/inference), ONNX Runtime',
+      'Text-to-image architectures, prompt engineering with MWEs/supersenses',
+      'LLM apps: RAG, agents, MCP; experiment tracking and basic MLOps',
+    ],
+  },
+  {
+    title: 'Systems & Networking',
+    items: [
+      'Linux administration, shell, Docker',
+      'Networking: switching, VLANs, routing, firewalling, LTE/5G',
+      'Embedded basics: Yocto, systemd, device trees, MQTT/TLS',
+      'Scripting: Bash, Python',
+    ],
+  },
+];
+
+const tools = 'Git, GitHub, Jira, HubSpot, Postman, Bruno, AWS (EC2, S3, IAM), Logstash, Wireshark';
+
+const delivers = [
+  'Translate vague requirements into a scoped plan, then ship it on time.',
+  'Bridge sales, customers, and engineering — turning technical detail into plain language.',
+  'Reliable services: containerized deployments with clear monitoring.',
+  'Cost-aware design: lean infrastructure, right-sizing, and simple automation.',
+  'Security by default: least-privilege IAM, secrets handling, network hygiene.',
+];
+---
+
+<section id="skills" class="section section--alt">
+  <div class="container">
+    <header class="section__header reveal">
+      <h2>Skills</h2>
+      <p>Communication and engineering, with growing AI depth on top of systems fundamentals.</p>
+    </header>
+
+    <div class="skills-grid">
+      {groups.map((g) => (
+        <div class="skill-card reveal">
+          <h3>{g.title}</h3>
+          <ul class="bullets">
+            {g.items.map((i) => <li>{i}</li>)}
+          </ul>
+        </div>
+      ))}
+      <div class="skill-card reveal">
+        <h3>Tools</h3>
+        <p class="plain">{tools}</p>
+      </div>
+      <div class="skill-card skill-card--wide reveal">
+        <h3>What I deliver</h3>
+        <ul class="bullets">
+          {delivers.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+
+const projectCount = (await getCollection('projects')).length;
+const yearsInTech = new Date().getFullYear() - 2019;
+
+const stats = [
+  { value: yearsInTech, suffix: '+', label: 'Years in tech' },
+  { value: projectCount, suffix: '', label: 'Projects shipped' },
+  { value: 4, suffix: '', label: 'Languages spoken' },
+  { value: 8, suffix: '+', label: 'Certifications' },
+];
+---
+
+<section class="stats" aria-label="At a glance">
+  <div class="container">
+    <div class="stats__grid">
+      {stats.map((s) => (
+        <div class="stat reveal">
+          <span class="stat__num" data-target={s.value} data-suffix={s.suffix}>0{s.suffix}</span>
+          <span class="stat__label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const nums = document.querySelectorAll<HTMLElement>('.stat__num');
+  if (nums.length) {
+    const animate = (el: HTMLElement) => {
+      const target = Number(el.dataset.target || '0');
+      const suffix = el.dataset.suffix || '';
+      const duration = 1200;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      nums.forEach((el) => {
+        el.textContent = (el.dataset.target || '0') + (el.dataset.suffix || '');
+      });
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              animate(e.target as HTMLElement);
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      nums.forEach((el) => io.observe(el));
+    }
+  }
+</script>

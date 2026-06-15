@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Sayef Ali Khan | Engineer & Communicator',
+  description = 'Engineer and communicator who turns vague requirements into reliable systems — and directs AI to ship them. Background in Linux, networking, and embedded; now building AI-powered tools.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteUrl = Astro.site ? new URL(base + '/', Astro.site).href : '';
+const ogImage = `${siteUrl}images/sayef.jpg`;
+
+// Cloudflare Web Analytics (cookie-less, no PII). Set PUBLIC_CF_BEACON_TOKEN to enable.
+const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {siteUrl && <meta property="og:url" content={siteUrl} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text x='16' y='23' font-size='20' font-weight='bold' font-family='system-ui,sans-serif' fill='white' text-anchor='middle'>S</text></svg>"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@800&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href={`${base}/images/sayef.jpg`} />
+
+    {cfBeacon && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${cfBeacon}"}`}
+      ></script>
+    )}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <slot />
+  </body>
+</html>

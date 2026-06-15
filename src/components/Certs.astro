@@ -1,0 +1,34 @@
+---
+const certs = [
+  { year: '2025', name: 'AI Agents Fundamentals', issuer: 'Hugging Face' },
+  { year: '2024', name: 'Generative AI at SAP', issuer: 'SAP' },
+  { year: '2024', name: 'Goethe-Zertifikat B1', issuer: 'Goethe-Institut' },
+  { year: '2023', name: 'Learn Bash; Learn Git & GitHub', issuer: 'Codecademy' },
+  { year: '2021', name: 'AZ-900 Azure Fundamentals', issuer: 'Microsoft' },
+  { year: '—', name: 'Certified DDoS Secure Administrator; Certified Technical Engineer', issuer: 'Allot' },
+  { year: '—', name: 'NDG Linux Unhatched', issuer: 'Cisco Networking Academy' },
+  { year: '—', name: 'CCNA MPLS Core Technologies', issuer: 'Udemy' },
+];
+---
+
+<section id="certs" class="section section--alt">
+  <div class="container">
+    <header class="section__header reveal">
+      <h2>Certifications (selected)</h2>
+    </header>
+
+    <div class="cert-grid">
+      {certs.map((c) => (
+        <div class="cert-item reveal">
+          <span class="cert-year">{c.year}</span>
+          <div class="cert-info">
+            {c.name}
+            <span class="cert-issuer">{c.issuer}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="muted small" style="margin-top: 1.25rem;">Full list available on request.</p>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+const edu = [
+  {
+    school: 'FAU Erlangen-Nürnberg',
+    detail: 'M.Sc., Information and Communications Technology · Oct 2021 – Dec 2024',
+  },
+  {
+    school: 'Khulna University',
+    detail: 'B.Sc., Electrical, Electronics and Communications Engineering · 2014 – 2018',
+  },
+];
+---
+
+<section id="education" class="section">
+  <div class="container">
+    <header class="section__header reveal">
+      <h2>Education</h2>
+    </header>
+    <div class="edu-grid">
+      {edu.map((e) => (
+        <div class="edu-card reveal">
+          <h3>{e.school}</h3>
+          <p class="muted">{e.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

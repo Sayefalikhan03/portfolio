@@ -1,0 +1,53 @@
+---
+const roles = [
+  {
+    title: 'Metrilus GmbH — Junior Onboarding Success Manager',
+    meta: 'Mar 2025 – Present · Uttenreuth, Bavaria, Germany · On-site',
+    body: 'Onboarding international customers to our vision-system products while supporting the development team. I handle support cases, bridge communication between sales and engineering on technical topics, and keep day-to-day operations running — the connective layer that keeps cross-team workflows moving.',
+  },
+  {
+    title: 'Metrilus GmbH — Werkstudent',
+    meta: 'Mar 2023 – Feb 2025 · Erlangen, Germany',
+    body: 'Part-time student role supporting systems tasks and product demos.',
+  },
+  {
+    title: 'Blue Solutions Limited — Assistant Manager',
+    meta: 'Nov 2021 – Apr 2022 · Dhaka, Bangladesh',
+    body: 'Linux system administration and IT project coordination.',
+  },
+  {
+    title: 'TVSL (Tech Valley Solutions) — Executive, Sales & Support',
+    meta: 'Feb 2020 – Dec 2021 · Dhaka, Bangladesh',
+    body: 'Network engineering support and system administration for customers.',
+  },
+  {
+    title: 'TVSL (Tech Valley Solutions) — Network Executive',
+    meta: 'Feb 2019 – Feb 2020 · Dhaka, Bangladesh',
+    body: 'Switching, routing, and customer network operations.',
+  },
+  {
+    title: 'Dhaka Stock Exchange Ltd — Engineering Internship',
+    meta: 'Jun 2018 – Aug 2018 · Dhaka, Bangladesh',
+    body: 'Short internship focused on infrastructure exposure.',
+  },
+];
+---
+
+<section id="experience" class="section section--alt">
+  <div class="container">
+    <header class="section__header reveal">
+      <h2>Experience</h2>
+      <p>Customer-facing and hands-on roles, while self-learning AI.</p>
+    </header>
+
+    <div class="timeline">
+      {roles.map((r) => (
+        <article class="timeline__item reveal">
+          <h3>{r.title}</h3>
+          <p class="muted small">{r.meta}</p>
+          <p>{r.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

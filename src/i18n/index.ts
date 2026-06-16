@@ -17,3 +17,9 @@ export function homePath(lang: Lang): string {
 export function otherLang(lang: Lang): Lang {
   return lang === 'en' ? 'de' : 'en';
 }
+
+// Résumé PDF per locale (files live in /public). German gets the German CV.
+export function resumePath(lang: Lang): string {
+  const file = lang === 'de' ? 'sayef-ali-khan-resume-de.pdf' : 'sayef-ali-khan-resume.pdf';
+  return `${base}/${file}`;
+}

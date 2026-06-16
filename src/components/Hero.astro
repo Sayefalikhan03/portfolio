@@ -1,5 +1,5 @@
 ---
-import { type Lang, defaultLang } from '../i18n';
+import { type Lang, defaultLang, resumePath } from '../i18n';
 
 interface Props {
   lang?: Lang;
@@ -7,7 +7,7 @@ interface Props {
 const { lang = defaultLang } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const resumeHref = `${base}/sayef-ali-khan-resume.pdf`;
+const resumeHref = resumePath(lang);
 
 const content = {
   en: {

@@ -6,7 +6,7 @@ summaryDe: "Eine strukturierte Roadmap über 16 Wochenenden vom Systems Engineer
 tags: ["LLMs", "RAG", "LangChain", "FastAPI", "ChromaDB", "Docker"]
 featured: true
 status: "in-progress"
-order: 8
+order: 9
 ---
 
 A structured 16-weekend roadmap to go from systems engineer to AI/ML engineer with production

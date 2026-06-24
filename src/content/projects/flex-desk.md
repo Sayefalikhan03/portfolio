@@ -8,7 +8,7 @@ image: "flex-desk.png"
 imageAlt: "Flex-Desk Manager dashboard"
 featured: false
 status: "live"
-order: 6
+order: 7
 ---
 
 A desk and equipment booking system. The PostgreSQL-backed scheduler uses TSRANGE types for

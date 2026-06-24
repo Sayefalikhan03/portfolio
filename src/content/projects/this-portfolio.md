@@ -6,7 +6,7 @@ summaryDe: "Die Seite, auf der Sie sich befinden — mit Astro gebaut, komponent
 tags: ["Astro", "TypeScript", "GitHub Actions"]
 featured: false
 status: "live"
-order: 9
+order: 10
 ---
 
 The site you're looking at. Built with Astro for fast, component-driven pages, with projects authored

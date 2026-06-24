@@ -8,7 +8,7 @@ image: "watchtower.png"
 imageAlt: "Watchtower monitoring dashboard"
 featured: false
 status: "live"
-order: 7
+order: 8
 ---
 
 A REST API with a Streamlit dashboard, engineered for reliability with high test coverage using

@@ -8,7 +8,7 @@ image: "cloud-nas.jpg"
 imageAlt: "Self-hosted cloud NAS"
 featured: false
 status: "live"
-order: 4
+order: 5
 ---
 
 Built a personal NAS to cut recurring cloud-storage costs. Features user authentication, scheduled

@@ -1,0 +1,98 @@
+---
+import { type Lang, defaultLang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const content = {
+  en: {
+    heading: 'How I work',
+    sub: 'A little about the human side of the work.',
+    body: [
+      "I build with AI every day — it's a genuine collaborator in how I plan, write, and ship software, not a gimmick I bolt on at the end.",
+      "But I'm just as deliberate about closing the laptop. The best ideas tend to show up away from the screen, so I make a point of touching grass. Tools change fast; staying curious and staying balanced is what keeps the work good.",
+    ],
+    caption: 'Working with AI — and remembering to touch grass.',
+  },
+  de: {
+    heading: 'Wie ich arbeite',
+    sub: 'Ein bisschen zur menschlichen Seite der Arbeit.',
+    body: [
+      'Ich baue jeden Tag mit KI — sie ist ein echter Mitstreiter beim Planen, Schreiben und Ausliefern von Software, kein Gimmick, das ich am Ende dranhänge.',
+      'Genauso bewusst klappe ich aber auch den Laptop zu. Die besten Ideen kommen meist abseits des Bildschirms, deshalb gehe ich ganz bewusst raus an die frische Luft. Werkzeuge ändern sich schnell — neugierig und ausgeglichen zu bleiben hält die Arbeit gut.',
+    ],
+    caption: 'Arbeiten mit KI — und nicht vergessen, rauszugehen.',
+  },
+};
+const t = content[lang];
+---
+
+<section id="about" class="section section--alt">
+  <div class="container">
+    <header class="section__header reveal">
+      <h2>{t.heading}</h2>
+      <p>{t.sub}</p>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        {t.body.map((p) => <p>{p}</p>)}
+      </div>
+      <figure class="about-media reveal">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          poster={`${base}/media/about-poster.jpg`}
+          width="1280"
+          height="720"
+        >
+          <source src={`${base}/media/about.mp4`} type="video/mp4" />
+        </video>
+        <figcaption>{t.caption}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .about-copy p {
+    margin: 0 0 1rem;
+  }
+  .about-copy p:last-child {
+    margin-bottom: 0;
+  }
+  .about-media {
+    margin: 0;
+  }
+  .about-media video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border-radius: var(--radius, 12px);
+    border: 1px solid var(--border);
+    background: #000;
+  }
+  .about-media figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted, #666);
+  }
+  @media (max-width: 760px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

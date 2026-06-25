@@ -303,6 +303,8 @@ a:hover { opacity: .6; }
 .card__body p { color: var(--muted); font-size: .91rem; line-height: 1.65; flex: 1; }
 
 .card--featured { grid-column: 1 / -1; }
+/* featured card: show the full screenshot in colour, never cropped */
+.card--featured .card__media img { object-fit: contain; filter: none; }
 @media (min-width: 768px) {
   .card--featured { flex-direction: row; }
   .card--featured .card__media { flex: 0 0 48%; aspect-ratio: auto; }

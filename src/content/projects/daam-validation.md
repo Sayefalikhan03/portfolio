@@ -8,7 +8,7 @@ image: "daam.jpg"
 imageAlt: "DAAM validation experiment"
 featured: false
 status: "research"
-order: 3
+order: 4
 ---
 
 Validated DAAM (Diffusion Attentive Attribution Maps) on a 7B model to inspect attention alignment

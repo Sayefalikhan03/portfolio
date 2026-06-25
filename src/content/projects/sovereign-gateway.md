@@ -8,7 +8,7 @@ image: "sovereign-gateway.png"
 imageAlt: "Sovereign Gateway — secure MCP server"
 featured: true
 status: "live"
-order: 5
+order: 6
 ---
 
 A production-hardened Model Context Protocol (MCP) server. Implements granular rate limiting,

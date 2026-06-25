@@ -8,7 +8,7 @@ image: "ai-news-automation.png"
 imageAlt: "AI news and learning automation pipeline"
 featured: false
 status: "live"
-order: 2
+order: 3
 ---
 
 An automation that aggregates daily tech-news summaries and weekly learning resources, built to
